@@ -33,6 +33,13 @@
     _sv.pageControlBottom = 20;
     _sv.gwEcrollViewSelectAction = ^(NSInteger tag){
         //点击图片事件
+        if (tag == 0) {
+            NSLog(@"111");
+        }else if (tag == 1){
+            NSLog(@"222");
+        }else{
+            NSLog(@"333");
+        }
     };
     [_sv startLoading];
     [self.view addSubview:_sv];
@@ -47,7 +54,14 @@
     _sv.pageControlCurrentPageIndicatorTintColor = [UIColor greenColor];
     _sv.PageControlPageIndicatorTintColor = [UIColor grayColor];
     _sv.gwEcrollViewSelectAction = ^(NSInteger tag){
-        
+        if (tag == 0) {
+            NSLog(@"111");
+        }else if (tag == 1){
+            NSLog(@"222");
+        }else{
+            NSLog(@"333");
+        }
+
     };
     [_sv startLoading];
     [self.view addSubview:_sv];

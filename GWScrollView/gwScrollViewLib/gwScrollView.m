@@ -31,7 +31,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat pageWith = self.scrollView.frame.size.width;
-    NSInteger page = floor((self.scrollView.contentOffset.x - pageWith/([_slideImagesArray count]+2))/pageWith) + 1;
+    NSInteger page = floor((self.scrollView.contentOffset.x - pageWith/([_slideImagesArray count]))/pageWith) + 1;
     page --; //默认从第二页开始
     self.pageControl.currentPage = page;
 }
@@ -39,10 +39,10 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     CGFloat pageWith = self.scrollView.frame.size.width;
-    NSInteger currentPage = floor((self.scrollView.contentOffset.x - pageWith/ ([_slideImagesArray count]+2)) / pageWith) + 1;
+    NSInteger currentPage = floor((self.scrollView.contentOffset.x - pageWith/ [_slideImagesArray count]) / pageWith) + 1;
     if (currentPage == 0) {
-        [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * _slideImagesArray.count, 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
-    }else if(currentPage == _slideImagesArray.count + 1){
+        [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * ([_slideImagesArray count]-2), 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
+    }else if(currentPage == _slideImagesArray.count-1){
         [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width,_scrollView.frame.size.height) animated:NO
          ];
     }
@@ -52,8 +52,8 @@
 {
     if (!self.withoutAutoScroll){
         if (_tempPage == 0) {
-            [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * _slideImagesArray.count, 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
-        }else if(_tempPage == _slideImagesArray.count){
+            [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * ([_slideImagesArray count]-2), 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
+        }else if(_tempPage == _slideImagesArray.count-2){
             [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width,_scrollView.frame.size.height) animated:NO
              ];
         }
@@ -126,7 +126,11 @@
     }
 	
 	if (_slideImagesArray.count != 0)
-	{		
+	{
+        NSString *firstImageUrl=[_slideImagesArray objectAtIndex:0];
+        NSString *lastImageUrl=[_slideImagesArray lastObject];
+        [_slideImagesArray insertObject:lastImageUrl atIndex:0];
+        [_slideImagesArray addObject:firstImageUrl];
 		for (NSInteger i = 0; i < _slideImagesArray.count; i++) {
 			gwScrollImageView *slideImage = [[gwScrollImageView alloc] init];
             slideImage.backgroundColor = [UIColor redColor];
@@ -135,35 +139,16 @@
             }else{
                 slideImage.image = [UIImage imageNamed:_slideImagesArray[i]];
             }
-			slideImage.tag = i;
-			slideImage.frame = CGRectMake(_scrollView.frame.size.width * (i + 1), 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
+            if (!(i == 0||i==_slideImagesArray.count-1)) {
+                slideImage.tag = i-1;
+            }
+			
+			slideImage.frame = CGRectMake(_scrollView.frame.size.width * i, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
 			[slideImage addTarget:self action:@selector(ImageClick:)];
 			[_scrollView addSubview:slideImage];// 首页是第0页,默认从第1页开始的。所以+_scrollView.frame.size.width
 		}
-        
-
-		// 取数组最后一张图片 放在第0页
-		gwScrollImageView *firstSlideImage = [[gwScrollImageView alloc] init];
-        if (self.urlImageBool) {
-            [firstSlideImage sd_setImageWithURL:[NSURL URLWithString:_slideImagesArray[_slideImagesArray.count - 1]] placeholderImage:[UIImage imageNamed:@"scrollImageDefault"]];
-        }else{
-            firstSlideImage.image = [UIImage imageNamed:_slideImagesArray[_slideImagesArray.count - 1]];
-        }
 		
-		firstSlideImage.frame = CGRectMake(0, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
-		[_scrollView addSubview:firstSlideImage];
-		// 取数组的第一张图片 放在最后1页
-		gwScrollImageView *endSlideImage = [[gwScrollImageView alloc] init];
-        if (self.urlImageBool) {
-            [endSlideImage sd_setImageWithURL:[NSURL URLWithString:_slideImagesArray[0]] placeholderImage:[UIImage imageNamed:@"scrollImageDefault"]];
-        }else{
-            endSlideImage.image = [UIImage imageNamed:_slideImagesArray[0]];
-        }
-		
-		endSlideImage.frame = CGRectMake((_slideImagesArray.count + 1) * _scrollView.frame.size.width, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
-		[_scrollView addSubview:endSlideImage];
-		
-		[_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width * (_slideImagesArray.count + 2), _scrollView.frame.size.height)]; //+上第1页和第4页  原理：4-[1-2-3-4]-1
+		[_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width * _slideImagesArray.count, _scrollView.frame.size.height)]; //+上第1页和第4页  原理：4-[1-2-3-4]-1
 		[_scrollView setContentOffset:CGPointMake(0, 0)];
 		[_scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
         
@@ -175,8 +160,7 @@
 			
 			if (_myTimer)
 			{
-				[_myTimer invalidate];
-				_myTimer = nil;
+                [self stopTimer];
 			}
 			
 			_myTimer = [NSTimer timerWithTimeInterval:[self.autoTime floatValue] target:self selector:@selector(runTimePage)userInfo:nil repeats:YES];
@@ -191,6 +175,11 @@
     if (self.gwEcrollViewSelectAction) {
          self.gwEcrollViewSelectAction(sender.tag);
     }
+}
+
+- (void)stopTimer{
+    [_myTimer invalidate];
+    _myTimer = nil;
 }
 
 @end

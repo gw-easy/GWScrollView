@@ -33,4 +33,6 @@ typedef void (^gwScrollViewSelectBlock)(NSInteger);
 //@property (nonatomic, strong) NSMutableArray *imageArr;
 
 - (void)startLoading; //加载初始化（必须实现）
+
+- (void)stopTimer;//销毁定时器
 @end
