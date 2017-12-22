@@ -9,13 +9,13 @@
 #import "gwScrollView.h"
 #import "UIImageView+WebCache.h"
 #import "gwScrollImageView.h"
-
+#import "GWPageControl.h"
 @interface gwScrollView()
 {
     NSInteger _tempPage;
 }
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) GWPageControl *pageControl;
 @property (nonatomic, strong) NSTimer *myTimer;
 @end
 
@@ -103,13 +103,15 @@
     if (self.showPageControl) {
         _pageControl = ({
             CGFloat pageBottom = self.pageControlBottom?self.pageControlBottom:10;
-            UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0,_scrollView.frame.size.height-pageBottom , [UIScreen mainScreen].bounds.size.width, pageBottom)];
+            GWPageControl *pageControl = [[GWPageControl alloc] initWithFrame:CGRectMake(0,_scrollView.frame.size.height-pageBottom , [UIScreen mainScreen].bounds.size.width, pageBottom)];
             
-            CGFloat pageScale = self.pageControlScale?self.pageControlScale:1;
-            pageControl.transform = CGAffineTransformScale(CGAffineTransformIdentity, pageScale, pageScale);
+            pageControl.pageWidth = self.pageWidth;
+            pageControl.pageHeight = self.pageHeight;
+            pageControl.pageMagrin = self.pageMagrin;
+
             if (self.pageImageStr.length>0 && self.currentPageImageStr.length>0) {
-                [pageControl setValue:[UIImage imageNamed:self.pageImageStr] forKeyPath:@"_pageImage"];
-                [pageControl setValue:[UIImage imageNamed:self.currentPageImageStr] forKeyPath:@"_currentPageImage"];
+                pageControl.pageImageStr = self.pageImageStr;
+                pageControl.currentPageImageStr = self.currentPageImageStr;
             }
 
             

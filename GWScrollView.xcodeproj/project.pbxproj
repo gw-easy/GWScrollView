@@ -33,6 +33,8 @@
 		C4583D8F1E34F01D00D2D7A6 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D7D1E34F01D00D2D7A6 /* UIImageView+HighlightedWebCache.m */; };
 		C4583D901E34F01D00D2D7A6 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D7F1E34F01D00D2D7A6 /* UIImageView+WebCache.m */; };
 		C4583D911E34F01D00D2D7A6 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D811E34F01D00D2D7A6 /* UIView+WebCacheOperation.m */; };
+		C48FF4251FECFEA0002087C0 /* GWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FF4241FECFEA0002087C0 /* GWPageControl.m */; };
+		C48FF4281FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,10 @@
 		C4583D7F1E34F01D00D2D7A6 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		C4583D801E34F01D00D2D7A6 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		C4583D811E34F01D00D2D7A6 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		C48FF4231FECFEA0002087C0 /* GWPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWPageControl.h; sourceTree = "<group>"; };
+		C48FF4241FECFEA0002087C0 /* GWPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWPageControl.m; sourceTree = "<group>"; };
+		C48FF4261FED0492002087C0 /* GW_AnimatedGIFImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GW_AnimatedGIFImageSerialization.h; sourceTree = "<group>"; };
+		C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,10 +206,14 @@
 		C4583D591E34EF4300D2D7A6 /* gwScrollViewLib */ = {
 			isa = PBXGroup;
 			children = (
+				C48FF4261FED0492002087C0 /* GW_AnimatedGIFImageSerialization.h */,
+				C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */,
 				C4583D5A1E34EF4300D2D7A6 /* gwScrollImageView.h */,
 				C4583D5B1E34EF4300D2D7A6 /* gwScrollImageView.m */,
 				C4583D5C1E34EF4300D2D7A6 /* gwScrollView.h */,
 				C4583D5D1E34EF4300D2D7A6 /* gwScrollView.m */,
+				C48FF4231FECFEA0002087C0 /* GWPageControl.h */,
+				C48FF4241FECFEA0002087C0 /* GWPageControl.m */,
 			);
 			path = gwScrollViewLib;
 			sourceTree = "<group>";
@@ -310,11 +320,12 @@
 		C4583D1B1E34EF1600D2D7A6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = gw;
 				TargetAttributes = {
 					C4583D221E34EF1600D2D7A6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = E8X5ZQ3QPM;
 						ProvisioningStyle = Automatic;
 					};
 					C4583D3B1E34EF1600D2D7A6 = {
@@ -392,11 +403,13 @@
 				C4583D5E1E34EF4300D2D7A6 /* gwScrollImageView.m in Sources */,
 				C4583D891E34F01D00D2D7A6 /* SDWebImageManager.m in Sources */,
 				C4583D911E34F01D00D2D7A6 /* UIView+WebCacheOperation.m in Sources */,
+				C48FF4281FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m in Sources */,
 				C4583D8B1E34F01D00D2D7A6 /* UIButton+WebCache.m in Sources */,
 				C4583D8D1E34F01D00D2D7A6 /* UIImage+MultiFormat.m in Sources */,
 				C4583D2B1E34EF1600D2D7A6 /* AppDelegate.m in Sources */,
 				C4583D881E34F01D00D2D7A6 /* SDWebImageDownloaderOperation.m in Sources */,
 				C4583D8C1E34F01D00D2D7A6 /* UIImage+GIF.m in Sources */,
+				C48FF4251FECFEA0002087C0 /* GWPageControl.m in Sources */,
 				C4583D851E34F01D00D2D7A6 /* SDWebImageCompat.m in Sources */,
 				C4583D831E34F01D00D2D7A6 /* NSData+ImageContentType.m in Sources */,
 				C4583D281E34EF1600D2D7A6 /* main.m in Sources */,
@@ -465,7 +478,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -473,7 +488,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -513,7 +532,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -521,7 +542,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -550,7 +575,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E8X5ZQ3QPM;
 				INFOPLIST_FILE = GWScrollView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gw.GWScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -561,7 +588,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E8X5ZQ3QPM;
 				INFOPLIST_FILE = GWScrollView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gw.GWScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -633,6 +662,7 @@
 				C4583D521E34EF1600D2D7A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4583D531E34EF1600D2D7A6 /* Build configuration list for PBXNativeTarget "GWScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -641,6 +671,7 @@
 				C4583D551E34EF1600D2D7A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4583D561E34EF1600D2D7A6 /* Build configuration list for PBXNativeTarget "GWScrollViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -649,6 +680,7 @@
 				C4583D581E34EF1600D2D7A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

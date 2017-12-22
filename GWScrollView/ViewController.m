@@ -25,12 +25,14 @@
 //自定义page样式
 - (void)createBannerUI{
     gwScrollView *_sv = [[gwScrollView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 200)];
-    _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3"]];
+    _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3",@"image3",@"image3",@"image3"]];
     _sv.showPageControl = YES;
     _sv.pageImageStr = @"square-tb4";
     _sv.currentPageImageStr = @"square-tb3";
-    _sv.pageControlScale = 0.5;
     _sv.pageControlBottom = 20;
+    _sv.pageWidth = 25;
+    _sv.pageHeight = 5;
+    _sv.pageMagrin = 10;
     _sv.gwEcrollViewSelectAction = ^(NSInteger tag){
         //点击图片事件
         if (tag == 0) {
