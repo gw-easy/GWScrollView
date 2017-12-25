@@ -6,9 +6,9 @@
 //  Copyright © 2017年 gw. All rights reserved.
 //
 
-#import "gwScrollImageView.h"
+#import "GWScrollImageView.h"
 
-@implementation gwScrollImageView
+@implementation GWScrollImageView
 
 - (id)initWithFrame:(CGRect)frame
 {

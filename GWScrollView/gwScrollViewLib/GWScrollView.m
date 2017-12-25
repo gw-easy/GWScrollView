@@ -6,11 +6,11 @@
 //  Copyright © 2017年 gw. All rights reserved.
 //
 
-#import "gwScrollView.h"
+#import "GWScrollView.h"
 #import "UIImageView+WebCache.h"
-#import "gwScrollImageView.h"
+#import "GWScrollImageView.h"
 #import "GWPageControl.h"
-@interface gwScrollView()
+@interface GWScrollView()
 {
     NSInteger _tempPage;
 }
@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSTimer *myTimer;
 @end
 
-@implementation gwScrollView
+@implementation GWScrollView
 
 - (void)startLoading
 {
@@ -103,13 +103,13 @@
     if (self.showPageControl) {
         _pageControl = ({
             CGFloat pageBottom = self.pageControlBottom?self.pageControlBottom:10;
-            GWPageControl *pageControl = [[GWPageControl alloc] initWithFrame:CGRectMake(0,_scrollView.frame.size.height-pageBottom , [UIScreen mainScreen].bounds.size.width, pageBottom)];
-            
+            GWPageControl *pageControl = [[GWPageControl alloc] initWithFrame:CGRectMake(0,_scrollView.frame.size.height-pageBottom , _scrollView.frame.size.width, pageBottom)];
             pageControl.pageWidth = self.pageWidth;
             pageControl.pageHeight = self.pageHeight;
             pageControl.pageMagrin = self.pageMagrin;
 
             if (self.pageImageStr.length>0 && self.currentPageImageStr.length>0) {
+                //两张图片必须同时存在，否则报错
                 pageControl.pageImageStr = self.pageImageStr;
                 pageControl.currentPageImageStr = self.currentPageImageStr;
             }
@@ -134,7 +134,7 @@
         [_slideImagesArray insertObject:lastImageUrl atIndex:0];
         [_slideImagesArray addObject:firstImageUrl];
 		for (NSInteger i = 0; i < _slideImagesArray.count; i++) {
-			gwScrollImageView *slideImage = [[gwScrollImageView alloc] init];
+			GWScrollImageView *slideImage = [[GWScrollImageView alloc] init];
             slideImage.backgroundColor = [UIColor redColor];
             if (self.urlImageBool) {
                 [slideImage sd_setImageWithURL:[NSURL URLWithString:_slideImagesArray[i]] placeholderImage: self.defaultIamge ? self.defaultIamge : [UIImage imageNamed: @"scrollImageDefault"]];

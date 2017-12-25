@@ -15,8 +15,8 @@
 		C4583D361E34EF1600D2D7A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4583D341E34EF1600D2D7A6 /* LaunchScreen.storyboard */; };
 		C4583D411E34EF1600D2D7A6 /* GWScrollViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D401E34EF1600D2D7A6 /* GWScrollViewTests.m */; };
 		C4583D4C1E34EF1600D2D7A6 /* GWScrollViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D4B1E34EF1600D2D7A6 /* GWScrollViewUITests.m */; };
-		C4583D5E1E34EF4300D2D7A6 /* gwScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D5B1E34EF4300D2D7A6 /* gwScrollImageView.m */; };
-		C4583D5F1E34EF4300D2D7A6 /* gwScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D5D1E34EF4300D2D7A6 /* gwScrollView.m */; };
+		C4583D5E1E34EF4300D2D7A6 /* GWScrollImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D5B1E34EF4300D2D7A6 /* GWScrollImageView.m */; };
+		C4583D5F1E34EF4300D2D7A6 /* GWScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D5D1E34EF4300D2D7A6 /* GWScrollView.m */; };
 		C4583D821E34F01D00D2D7A6 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D621E34F01D00D2D7A6 /* MKAnnotationView+WebCache.m */; };
 		C4583D831E34F01D00D2D7A6 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D641E34F01D00D2D7A6 /* NSData+ImageContentType.m */; };
 		C4583D841E34F01D00D2D7A6 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D661E34F01D00D2D7A6 /* SDImageCache.m */; };
@@ -35,6 +35,8 @@
 		C4583D911E34F01D00D2D7A6 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D811E34F01D00D2D7A6 /* UIView+WebCacheOperation.m */; };
 		C48FF4251FECFEA0002087C0 /* GWPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FF4241FECFEA0002087C0 /* GWPageControl.m */; };
 		C48FF4281FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */; };
+		C4AD5C451FF093B800F81BC2 /* yezi.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4AD5C441FF093B700F81BC2 /* yezi.gif */; };
+		C4AD5C471FF0AC3B00F81BC2 /* 小太阳.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4AD5C461FF0AC3B00F81BC2 /* 小太阳.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,10 +73,10 @@
 		C4583D471E34EF1600D2D7A6 /* GWScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GWScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4583D4B1E34EF1600D2D7A6 /* GWScrollViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWScrollViewUITests.m; sourceTree = "<group>"; };
 		C4583D4D1E34EF1600D2D7A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C4583D5A1E34EF4300D2D7A6 /* gwScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gwScrollImageView.h; sourceTree = "<group>"; };
-		C4583D5B1E34EF4300D2D7A6 /* gwScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gwScrollImageView.m; sourceTree = "<group>"; };
-		C4583D5C1E34EF4300D2D7A6 /* gwScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gwScrollView.h; sourceTree = "<group>"; };
-		C4583D5D1E34EF4300D2D7A6 /* gwScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gwScrollView.m; sourceTree = "<group>"; };
+		C4583D5A1E34EF4300D2D7A6 /* GWScrollImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWScrollImageView.h; sourceTree = "<group>"; };
+		C4583D5B1E34EF4300D2D7A6 /* GWScrollImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWScrollImageView.m; sourceTree = "<group>"; };
+		C4583D5C1E34EF4300D2D7A6 /* GWScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GWScrollView.h; sourceTree = "<group>"; };
+		C4583D5D1E34EF4300D2D7A6 /* GWScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GWScrollView.m; sourceTree = "<group>"; };
 		C4583D611E34F01D00D2D7A6 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		C4583D621E34F01D00D2D7A6 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		C4583D631E34F01D00D2D7A6 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -112,6 +114,8 @@
 		C48FF4241FECFEA0002087C0 /* GWPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWPageControl.m; sourceTree = "<group>"; };
 		C48FF4261FED0492002087C0 /* GW_AnimatedGIFImageSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GW_AnimatedGIFImageSerialization.h; sourceTree = "<group>"; };
 		C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
+		C4AD5C441FF093B700F81BC2 /* yezi.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = yezi.gif; sourceTree = "<group>"; };
+		C4AD5C461FF0AC3B00F81BC2 /* 小太阳.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "小太阳.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,12 +210,14 @@
 		C4583D591E34EF4300D2D7A6 /* gwScrollViewLib */ = {
 			isa = PBXGroup;
 			children = (
+				C4AD5C461FF0AC3B00F81BC2 /* 小太阳.gif */,
+				C4AD5C441FF093B700F81BC2 /* yezi.gif */,
 				C48FF4261FED0492002087C0 /* GW_AnimatedGIFImageSerialization.h */,
 				C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */,
-				C4583D5A1E34EF4300D2D7A6 /* gwScrollImageView.h */,
-				C4583D5B1E34EF4300D2D7A6 /* gwScrollImageView.m */,
-				C4583D5C1E34EF4300D2D7A6 /* gwScrollView.h */,
-				C4583D5D1E34EF4300D2D7A6 /* gwScrollView.m */,
+				C4583D5A1E34EF4300D2D7A6 /* GWScrollImageView.h */,
+				C4583D5B1E34EF4300D2D7A6 /* GWScrollImageView.m */,
+				C4583D5C1E34EF4300D2D7A6 /* GWScrollView.h */,
+				C4583D5D1E34EF4300D2D7A6 /* GWScrollView.m */,
 				C48FF4231FECFEA0002087C0 /* GWPageControl.h */,
 				C48FF4241FECFEA0002087C0 /* GWPageControl.m */,
 			);
@@ -366,6 +372,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4583D361E34EF1600D2D7A6 /* LaunchScreen.storyboard in Resources */,
+				C4AD5C471FF0AC3B00F81BC2 /* 小太阳.gif in Resources */,
+				C4AD5C451FF093B800F81BC2 /* yezi.gif in Resources */,
 				C4583D331E34EF1600D2D7A6 /* Assets.xcassets in Resources */,
 				C4583D311E34EF1600D2D7A6 /* Main.storyboard in Resources */,
 			);
@@ -397,10 +405,10 @@
 				C4583D901E34F01D00D2D7A6 /* UIImageView+WebCache.m in Sources */,
 				C4583D8E1E34F01D00D2D7A6 /* UIImage+WebP.m in Sources */,
 				C4583D8A1E34F01D00D2D7A6 /* SDWebImagePrefetcher.m in Sources */,
-				C4583D5F1E34EF4300D2D7A6 /* gwScrollView.m in Sources */,
+				C4583D5F1E34EF4300D2D7A6 /* GWScrollView.m in Sources */,
 				C4583D861E34F01D00D2D7A6 /* SDWebImageDecoder.m in Sources */,
 				C4583D871E34F01D00D2D7A6 /* SDWebImageDownloader.m in Sources */,
-				C4583D5E1E34EF4300D2D7A6 /* gwScrollImageView.m in Sources */,
+				C4583D5E1E34EF4300D2D7A6 /* GWScrollImageView.m in Sources */,
 				C4583D891E34F01D00D2D7A6 /* SDWebImageManager.m in Sources */,
 				C4583D911E34F01D00D2D7A6 /* UIView+WebCacheOperation.m in Sources */,
 				C48FF4281FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m in Sources */,

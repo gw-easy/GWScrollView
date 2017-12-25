@@ -10,7 +10,7 @@
 
 
 typedef void (^gwScrollViewSelectBlock)(NSInteger);
-@interface gwScrollView : UIView<UIScrollViewDelegate>
+@interface GWScrollView : UIView<UIScrollViewDelegate>
 
 //dataSource
 @property (nonatomic, strong) NSMutableArray *slideImagesArray; //存储图片的地址
@@ -23,7 +23,7 @@ typedef void (^gwScrollViewSelectBlock)(NSInteger);
 @property (assign,nonatomic)BOOL urlImageBool;//是否是网络加载图片，默认是NO
 
 ///////pageControl
-@property (assign,nonatomic)CGFloat pageControlBottom;//pageControl距离scroll底部的距离
+@property (assign,nonatomic)CGFloat pageControlBottom;//pageControl高度
 @property (nonatomic, strong) UIColor *pageControlCurrentPageIndicatorTintColor;//page当前颜色
 @property (nonatomic, strong) UIColor *PageControlPageIndicatorTintColor;//page默认颜色
 @property (nonatomic, strong) UIImage *defaultIamge;

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "gwScrollView.h"
+#import "GWScrollView.h"
 @interface ViewController ()
 
 @end
@@ -24,7 +24,7 @@
 #pragma mark - banner
 //自定义page样式
 - (void)createBannerUI{
-    gwScrollView *_sv = [[gwScrollView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 200)];
+    GWScrollView *_sv = [[GWScrollView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 200)];
     _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3",@"image3",@"image3",@"image3"]];
     _sv.showPageControl = YES;
     _sv.pageImageStr = @"square-tb4";
@@ -49,12 +49,19 @@
 }
 
 - (void)createBannerUI2{
-    gwScrollView *_sv = [[gwScrollView alloc] initWithFrame:CGRectMake(0, 300, [UIScreen mainScreen].bounds.size.width, 200)];
+    GWScrollView *_sv = [[GWScrollView alloc] initWithFrame:CGRectMake(0, 300, [UIScreen mainScreen].bounds.size.width, 200)];
     _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3"]];
     _sv.showPageControl = YES;
     _sv.autoTime = @(5);
     _sv.pageControlCurrentPageIndicatorTintColor = [UIColor greenColor];
     _sv.PageControlPageIndicatorTintColor = [UIColor grayColor];
+    _sv.pageImageStr = @"square-tb4";
+//    _sv.currentPageImageStr = @"yezi.gif";
+    _sv.currentPageImageStr = @"小太阳.gif";
+    _sv.pageWidth = 60;
+    _sv.pageHeight = 60;
+    _sv.pageMagrin = 15;
+    _sv.pageControlBottom = 70;
     _sv.gwEcrollViewSelectAction = ^(NSInteger tag){
         if (tag == 0) {
             NSLog(@"111");

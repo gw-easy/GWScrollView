@@ -22,10 +22,11 @@
 - (void)setCurrentPageImageStr:(NSString *)currentPageImageStr{
     _currentPageImageStr = currentPageImageStr;
     if ([currentPageImageStr hasSuffix:@".jpg"] || [currentPageImageStr hasSuffix:@".png"] || [currentPageImageStr hasSuffix:@".gif"]) {
-        [self setValue:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:currentPageImageStr ofType:nil]] forKeyPath:@"_currentPageImage"];
+        UIImage *currentImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:currentPageImageStr ofType:nil]];
+        [self setValue:currentImage forKeyPath:@"_currentPageImage"];
         return;
     }
-    [self setValue:[UIImage imageNamed:self.currentPageImageStr] forKeyPath:@"_currentPageImage"];
+    [self setValue:[UIImage imageNamed:currentPageImageStr] forKeyPath:@"_currentPageImage"];
 }
 
 - (void)layoutSubviews
@@ -62,7 +63,7 @@
     for (int i=0; i<[self.subviews count]; i++) {
         UIImageView* pageImage = [self.subviews objectAtIndex:i];
 
-        [pageImage setFrame:CGRectMake(i * marginX, pageImage.frame.origin.y, self.pageWidth, self.pageHeight)];
+        [pageImage setFrame:CGRectMake(i * marginX, 0, self.pageWidth, self.pageHeight)];
 
     }
 }

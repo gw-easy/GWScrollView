@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface gwScrollImageView : UIImageView
+@interface GWScrollImageView : UIImageView
 @property (nonatomic, assign) id target;
 @property (nonatomic, assign) SEL action;
 -(void)addTarget:(id)target action:(SEL)action;
