@@ -12,16 +12,23 @@
 
 - (void)setPageImageStr:(NSString *)pageImageStr{
     _pageImageStr = pageImageStr;
-    if ([pageImageStr hasSuffix:@".jpg"] || [pageImageStr hasSuffix:@".png"] || [pageImageStr hasSuffix:@".gif"]) {
+    if ([self isConfile:pageImageStr]) {
         [self setValue:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:pageImageStr ofType:nil]] forKeyPath:@"_pageImage"];
         return;
     }
     [self setValue:[UIImage imageNamed:pageImageStr] forKeyPath:@"_pageImage"];
 }
 
+- (BOOL)isConfile:(NSString *)name{
+    if ([name hasSuffix:@".jpg"] || [name hasSuffix:@".png"] || [name hasSuffix:@".gif"]) {
+        return YES;
+    }
+    return NO;
+}
+
 - (void)setCurrentPageImageStr:(NSString *)currentPageImageStr{
     _currentPageImageStr = currentPageImageStr;
-    if ([currentPageImageStr hasSuffix:@".jpg"] || [currentPageImageStr hasSuffix:@".png"] || [currentPageImageStr hasSuffix:@".gif"]) {
+    if ([self isConfile:currentPageImageStr]) {
         UIImage *currentImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:currentPageImageStr ofType:nil]];
         [self setValue:currentImage forKeyPath:@"_currentPageImage"];
         return;
