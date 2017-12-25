@@ -52,16 +52,16 @@
     GWScrollView *_sv = [[GWScrollView alloc] initWithFrame:CGRectMake(0, 300, [UIScreen mainScreen].bounds.size.width, 200)];
     _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3"]];
     _sv.showPageControl = YES;
-    _sv.autoTime = @(5);
+    _sv.autoTime = @(3);
     _sv.pageControlCurrentPageIndicatorTintColor = [UIColor greenColor];
     _sv.PageControlPageIndicatorTintColor = [UIColor grayColor];
     _sv.pageImageStr = @"square-tb4";
 //    _sv.currentPageImageStr = @"yezi.gif";
     _sv.currentPageImageStr = @"小太阳.gif";
-    _sv.pageWidth = 60;
-    _sv.pageHeight = 60;
+    _sv.pageWidth = 30;
+    _sv.pageHeight = 30;
     _sv.pageMagrin = 15;
-    _sv.pageControlBottom = 70;
+    _sv.pageControlBottom = 40;
     _sv.gwEcrollViewSelectAction = ^(NSInteger tag){
         if (tag == 0) {
             NSLog(@"111");

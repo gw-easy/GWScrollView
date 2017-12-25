@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-
 typedef void (^gwScrollViewSelectBlock)(NSInteger);
 @interface GWScrollView : UIView<UIScrollViewDelegate>
 
-//dataSource
+///////dataSource
 @property (nonatomic, strong) NSMutableArray *slideImagesArray; //存储图片的地址
 
 ///////scrollView
@@ -32,8 +31,8 @@ typedef void (^gwScrollViewSelectBlock)(NSInteger);
 @property (assign, nonatomic)CGFloat pageWidth;//page图片宽度
 @property (assign, nonatomic)CGFloat pageHeight;//page图片高度
 @property (assign, nonatomic)CGFloat pageMagrin;//page图片间距
-@property (copy,nonatomic)NSString *pageImageStr;//pageControl底部图片
-@property (copy,nonatomic)NSString *currentPageImageStr;//pageControl当前图片
+@property (copy,nonatomic)NSString *pageImageStr;//pageControl底部图片(如果需要改变图片，pageImageStr和currentPageImageStr必须同时实现)
+@property (copy,nonatomic)NSString *currentPageImageStr;//pageControl当前图片(如果需要改变图片，pageImageStr和currentPageImageStr必须同时实现)
 
 ////////action
 - (void)startLoading; //加载初始化（必须实现）

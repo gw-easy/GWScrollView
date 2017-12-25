@@ -37,6 +37,7 @@
 		C48FF4281FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */; };
 		C4AD5C451FF093B800F81BC2 /* yezi.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4AD5C441FF093B700F81BC2 /* yezi.gif */; };
 		C4AD5C471FF0AC3B00F81BC2 /* 小太阳.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4AD5C461FF0AC3B00F81BC2 /* 小太阳.gif */; };
+		C4AD5C521FF0D74200F81BC2 /* yanshi.gif in Resources */ = {isa = PBXBuildFile; fileRef = C4AD5C511FF0D74100F81BC2 /* yanshi.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		C48FF4271FED0492002087C0 /* GW_AnimatedGIFImageSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GW_AnimatedGIFImageSerialization.m; sourceTree = "<group>"; };
 		C4AD5C441FF093B700F81BC2 /* yezi.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = yezi.gif; sourceTree = "<group>"; };
 		C4AD5C461FF0AC3B00F81BC2 /* 小太阳.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "小太阳.gif"; sourceTree = "<group>"; };
+		C4AD5C511FF0D74100F81BC2 /* yanshi.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = yanshi.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 		C4583D261E34EF1600D2D7A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C4AD5C511FF0D74100F81BC2 /* yanshi.gif */,
 				C4583D271E34EF1600D2D7A6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -375,6 +378,7 @@
 				C4AD5C471FF0AC3B00F81BC2 /* 小太阳.gif in Resources */,
 				C4AD5C451FF093B800F81BC2 /* yezi.gif in Resources */,
 				C4583D331E34EF1600D2D7A6 /* Assets.xcassets in Resources */,
+				C4AD5C521FF0D74200F81BC2 /* yanshi.gif in Resources */,
 				C4583D311E34EF1600D2D7A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
