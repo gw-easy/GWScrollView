@@ -52,9 +52,6 @@ __attribute__((overloadable)) UIImage * UIImageWithAnimatedGIFData(NSData *data,
             return [UIImage animatedImageWithImages:mutableImages duration:(duration <= 0.0f ? calculatedDuration : duration)];
         }
     }
-    _error: {
-        return nil;
-    }
 }
 
 static BOOL AnimatedGifDataIsValid(NSData *data) {
@@ -212,7 +209,12 @@ static inline void animated_gif_swizzleSelector(Class class, SEL originalSelecto
 #pragma mark -
 
 + (UIImage *)GW_Animated_gif_imageNamed:(NSString *)name __attribute__((objc_method_family(new))) {
-    NSString *path = [[NSBundle mainBundle] pathForResource:[name stringByDeletingPathExtension] ofType:[name pathExtension]];
+    NSString *path = @"";
+    if([name isKindOfClass:[NSString class]]){
+        path = [[NSBundle mainBundle] pathForResource:[name stringByDeletingPathExtension] ofType:[name pathExtension]];
+    }else{
+        return nil;
+    }
     if (!path) {
         path = [[NSBundle mainBundle] pathForResource:[[name stringByDeletingPathExtension] stringByAppendingString:@"@2x"] ofType:[name pathExtension]];
     }

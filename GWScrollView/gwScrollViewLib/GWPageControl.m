@@ -70,7 +70,7 @@
     for (int i=0; i<[self.subviews count]; i++) {
         UIImageView* pageImage = [self.subviews objectAtIndex:i];
 
-        [pageImage setFrame:CGRectMake(i * marginX, 0, self.pageWidth, self.pageHeight)];
+        [pageImage setFrame:CGRectMake(i * marginX, self.frame.size.height/2-self.pageHeight/2, self.pageWidth, self.pageHeight)];
 
     }
 }

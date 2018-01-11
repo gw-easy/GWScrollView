@@ -8,21 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger,dataType) {
+    //    图片路径(默认)
+    dataType_Str = 0,
+    //    请求地址
+    dataType_Url = 1,
+    //    图片
+    dataType_Image = 2
+};
+
 typedef void (^gwScrollViewSelectBlock)(NSInteger);
 @interface GWScrollView : UIView<UIScrollViewDelegate>
 
 ///////dataSource
 @property (nonatomic, strong) NSMutableArray *slideImagesArray; //存储图片的地址
-
+@property (assign, nonatomic)dataType data_Type;//存储的类型（默认是图片路径）
 ///////scrollView
 @property (nonatomic, copy) gwScrollViewSelectBlock gwEcrollViewSelectAction; // 图片点击事件
 @property (nonatomic) BOOL showPageControl; // 是否显示pageControl, 默认为NO
+@property (assign, nonatomic)CGFloat scrollHeight;//定义scroll高度
 @property (nonatomic) BOOL withoutAutoScroll; // 是否自动滚动
 @property (nonatomic) NSNumber *autoTime; //滚动时间
-@property (assign,nonatomic)BOOL urlImageBool;//是否是网络加载图片，默认是NO
 
 ///////pageControl
-@property (assign,nonatomic)CGFloat pageControlBottom;//pageControl高度
+@property (assign,nonatomic)CGFloat pageControlHeight;//pageControl高度
 @property (nonatomic, strong) UIColor *pageControlCurrentPageIndicatorTintColor;//page当前颜色
 @property (nonatomic, strong) UIColor *PageControlPageIndicatorTintColor;//page默认颜色
 @property (nonatomic, strong) UIImage *defaultIamge;

@@ -87,6 +87,9 @@
     }
     _scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+        if (self.scrollHeight) {
+            scrollView.frame = CGRectMake(0, 0, self.bounds.size.width, self.scrollHeight);
+        }
         scrollView.bounces = YES;
         scrollView.pagingEnabled = YES;
         scrollView.delegate = self;
@@ -102,8 +105,8 @@
     
     if (self.showPageControl) {
         _pageControl = ({
-            CGFloat pageBottom = self.pageControlBottom?self.pageControlBottom:10;
-            GWPageControl *pageControl = [[GWPageControl alloc] initWithFrame:CGRectMake(0,_scrollView.frame.size.height-pageBottom , _scrollView.frame.size.width, pageBottom)];
+            CGFloat pageBottom = self.pageControlHeight?self.pageControlHeight:10;
+            GWPageControl *pageControl = [[GWPageControl alloc] initWithFrame:CGRectMake(0,self.frame.size.height-pageBottom , self.frame.size.width, pageBottom)];
             pageControl.pageWidth = self.pageWidth;
             pageControl.pageHeight = self.pageHeight;
             pageControl.pageMagrin = self.pageMagrin;
@@ -129,26 +132,36 @@
 	
 	if (_slideImagesArray.count != 0)
 	{
-        NSString *firstImageUrl=[_slideImagesArray objectAtIndex:0];
-        NSString *lastImageUrl=[_slideImagesArray lastObject];
-        [_slideImagesArray insertObject:lastImageUrl atIndex:0];
-        [_slideImagesArray addObject:firstImageUrl];
-		for (NSInteger i = 0; i < _slideImagesArray.count; i++) {
-			GWScrollImageView *slideImage = [[GWScrollImageView alloc] init];
+        if (self.data_Type == dataType_Image) {
+            UIImage *firstImage=[_slideImagesArray objectAtIndex:0];
+            UIImage *lastImage=[_slideImagesArray lastObject];
+            [_slideImagesArray insertObject:lastImage atIndex:0];
+            [_slideImagesArray addObject:firstImage];
+        }else{
+            
+            NSString *firstImageUrl=[_slideImagesArray objectAtIndex:0];
+            NSString *lastImageUrl=[_slideImagesArray lastObject];
+            [_slideImagesArray insertObject:lastImageUrl atIndex:0];
+            [_slideImagesArray addObject:firstImageUrl];
+        }
+        for (NSInteger i = 0; i < _slideImagesArray.count; i++) {
+            GWScrollImageView *slideImage = [[GWScrollImageView alloc] init];
             slideImage.backgroundColor = [UIColor redColor];
-            if (self.urlImageBool) {
+            if (self.data_Type == dataType_Url) {
                 [slideImage sd_setImageWithURL:[NSURL URLWithString:_slideImagesArray[i]] placeholderImage: self.defaultIamge ? self.defaultIamge : [UIImage imageNamed: @"scrollImageDefault"]];
+            }else if(self.data_Type == dataType_Image){
+                slideImage.image = _slideImagesArray[i];
             }else{
                 slideImage.image = [UIImage imageNamed:_slideImagesArray[i]];
             }
             if (!(i == 0||i==_slideImagesArray.count-1)) {
                 slideImage.tag = i-1;
             }
-			
-			slideImage.frame = CGRectMake(_scrollView.frame.size.width * i, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
-			[slideImage addTarget:self action:@selector(ImageClick:)];
-			[_scrollView addSubview:slideImage];// 首页是第0页,默认从第1页开始的。所以+_scrollView.frame.size.width
-		}
+            
+            slideImage.frame = CGRectMake(_scrollView.frame.size.width * i, 0, _scrollView.frame.size.width, _scrollView.frame.size.height);
+            [slideImage addTarget:self action:@selector(ImageClick:)];
+            [_scrollView addSubview:slideImage];// 首页是第0页,默认从第1页开始的。所以+_scrollView.frame.size.width
+        }
 		
 		[_scrollView setContentSize:CGSizeMake(_scrollView.frame.size.width * _slideImagesArray.count, _scrollView.frame.size.height)]; //+上第1页和第4页  原理：4-[1-2-3-4]-1
 		[_scrollView setContentOffset:CGPointMake(0, 0)];
