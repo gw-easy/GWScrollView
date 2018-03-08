@@ -83,7 +83,7 @@
 		
 		[_scrollView removeFromSuperview];
 		_scrollView = nil;
-//        return;
+
     }
     _scrollView = ({
         UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
@@ -102,6 +102,11 @@
         [self addSubview:scrollView];
         scrollView;
     });
+    
+    if (_pageControl) {
+        [_pageControl removeFromSuperview];
+        _pageControl = nil;
+    }
     
     if (self.showPageControl) {
         _pageControl = ({
@@ -148,7 +153,7 @@
             GWScrollImageView *slideImage = [[GWScrollImageView alloc] init];
             slideImage.backgroundColor = [UIColor redColor];
             if (self.data_Type == dataType_Url) {
-                [slideImage sd_setImageWithURL:[NSURL URLWithString:_slideImagesArray[i]] placeholderImage: self.defaultIamge ? self.defaultIamge : [UIImage imageNamed: @"scrollImageDefault"]];
+                [slideImage sd_setImageWithURL:[NSURL URLWithString:_slideImagesArray[i]] placeholderImage: self.defaultImage ? self.defaultImage : [UIImage imageNamed: @"scrollImageDefault"]];
             }else if(self.data_Type == dataType_Image){
                 slideImage.image = _slideImagesArray[i];
             }else{

@@ -29,12 +29,13 @@ typedef void (^gwScrollViewSelectBlock)(NSInteger);
 @property (assign, nonatomic)CGFloat scrollHeight;//定义scroll高度
 @property (nonatomic) BOOL withoutAutoScroll; // 是否自动滚动
 @property (nonatomic) NSNumber *autoTime; //滚动时间
+@property (nonatomic, strong) UIImage *defaultImage; //placeholderImage
 
 ///////pageControl
 @property (assign,nonatomic)CGFloat pageControlHeight;//pageControl高度
 @property (nonatomic, strong) UIColor *pageControlCurrentPageIndicatorTintColor;//page当前颜色
 @property (nonatomic, strong) UIColor *PageControlPageIndicatorTintColor;//page默认颜色
-@property (nonatomic, strong) UIImage *defaultIamge;
+
 
 ////////自定义page按钮
 @property (assign, nonatomic)CGFloat pageWidth;//page图片宽度
