@@ -27,7 +27,7 @@
     GWScrollView *_sv = [[GWScrollView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 200)];
     _sv.scrollHeight = 180;
     _sv.backgroundColor = [UIColor yellowColor];
-    _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3",@"image3",@"image3",@"image3"]];
+    _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3",@"image1",@"image2",@"image3"]];
     _sv.showPageControl = YES;
     _sv.pageImageStr = @"square-tb4";
     _sv.currentPageImageStr = @"square-tb3";

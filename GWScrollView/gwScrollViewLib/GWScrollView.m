@@ -41,10 +41,9 @@
     CGFloat pageWith = self.scrollView.frame.size.width;
     NSInteger currentPage = floor((self.scrollView.contentOffset.x - pageWith/ [_slideImagesArray count]) / pageWith) + 1;
     if (currentPage == 0) {
-        [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * ([_slideImagesArray count]-2), 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
+        [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width* ([_slideImagesArray count]-2), 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
     }else if(currentPage == _slideImagesArray.count-1){
-        [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width,_scrollView.frame.size.height) animated:NO
-         ];
+        [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
     }
 }
 
@@ -52,10 +51,9 @@
 {
     if (!self.withoutAutoScroll){
         if (_tempPage == 0) {
-            [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * ([_slideImagesArray count]-2), 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
+            [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width* ([_slideImagesArray count]-2), 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
         }else if(_tempPage == _slideImagesArray.count-2){
-            [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width,_scrollView.frame.size.height) animated:NO
-             ];
+            [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
         }
     }
 }
@@ -75,6 +73,10 @@
     [self turnPage:page];
 }
 
+- (void)runTimePageAction:(UIPageControl *)sender{
+    NSInteger page = self.pageControl.currentPage;
+    self.scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width * (page + 1) , 0);
+}
 
 #pragma mark -private Methods-
 - (void)_initScrollView
@@ -130,6 +132,7 @@
             if(self.slideImagesArray.count < 2){
                 pageControl.hidden = YES;
             }
+            [pageControl addTarget:self action:@selector(runTimePageAction:) forControlEvents:UIControlEventValueChanged];
             [self addSubview:pageControl];
             pageControl;
         });
