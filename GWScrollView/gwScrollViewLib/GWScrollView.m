@@ -74,8 +74,7 @@
 }
 
 - (void)runTimePageAction:(UIPageControl *)sender{
-    NSInteger page = self.pageControl.currentPage;
-    self.scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width * (page + 1) , 0);
+    [self.scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width * (sender.currentPage + 1), 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
 }
 
 #pragma mark -private Methods-
