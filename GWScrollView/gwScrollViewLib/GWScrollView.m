@@ -174,7 +174,7 @@
 		[_scrollView setContentOffset:CGPointMake(0, 0)];
 		[_scrollView scrollRectToVisible:CGRectMake(_scrollView.frame.size.width, 0, _scrollView.frame.size.width, _scrollView.frame.size.height) animated:NO];
         
-        if (self.slideImagesArray.count>1) {
+        if (self.slideImagesArray.count>3) {
 		if (!self.withoutAutoScroll) {
 			if (!self.autoTime) {
 				self.autoTime = [NSNumber numberWithFloat:2.0f];

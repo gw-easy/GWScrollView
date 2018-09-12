@@ -53,7 +53,8 @@
 - (void)createBannerUI2{
     GWScrollView *_sv = [[GWScrollView alloc] initWithFrame:CGRectMake(0, 300, [UIScreen mainScreen].bounds.size.width, 200)];
     
-    _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3"]];
+//    _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2",@"image3"]];
+    _sv.slideImagesArray = [NSMutableArray arrayWithArray:@[@"image1",@"image2"]];
     _sv.showPageControl = YES;
     _sv.autoTime = @(3);
     _sv.pageControlCurrentPageIndicatorTintColor = [UIColor greenColor];
