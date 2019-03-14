@@ -75,6 +75,7 @@ static BOOL AnimatedGifDataIsValid(NSData *data) {
 //        }
         
         //判断是否是gif格式
+        
         return bytes[0] == 0x47 && bytes[1] == 0x49 && bytes[2] == 0x46;
     }
 

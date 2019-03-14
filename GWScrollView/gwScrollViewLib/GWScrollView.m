@@ -21,6 +21,13 @@
 
 @implementation GWScrollView
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        self.slideImagesArray = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)startLoading
 {
     [self _initScrollView];
