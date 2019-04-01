@@ -24,6 +24,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.slideImagesArray = [[NSMutableArray alloc] init];
+        _data_Type = dataType_Str;
     }
     return self;
 }
@@ -160,9 +161,12 @@
         }
         for (NSInteger i = 0; i < _slideImagesArray.count; i++) {
             GWScrollImageView *slideImage = [[GWScrollImageView alloc] init];
-            slideImage.backgroundColor = [UIColor redColor];
+            
             if (self.data_Type == dataType_Url) {
-                [slideImage sd_setImageWithURL:[NSURL URLWithString:_slideImagesArray[i]] placeholderImage: self.defaultImage ? self.defaultImage : [UIImage imageNamed: @"scrollImageDefault"]];
+                NSString *iUrl = _slideImagesArray[i];
+                iUrl = [iUrl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+                iUrl = [iUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+                [slideImage sd_setImageWithURL:[NSURL URLWithString:iUrl] placeholderImage: self.defaultImage ? self.defaultImage : [UIImage imageNamed: @"scrollImageDefault"]];
             }else if(self.data_Type == dataType_Image){
                 slideImage.image = _slideImagesArray[i];
             }else{
