@@ -22,6 +22,7 @@ typedef void (^gwScrollViewSelectBlock)(NSInteger);
 
 ///////dataSource
 @property (nonatomic, strong) NSMutableArray *slideImagesArray; //存储图片的地址
+
 @property (assign, nonatomic)dataType data_Type;//存储的类型（默认是图片路径）
 ///////scrollView
 @property (nonatomic, copy) gwScrollViewSelectBlock gwEcrollViewSelectAction; // 图片点击事件

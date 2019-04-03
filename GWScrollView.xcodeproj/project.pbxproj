@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28DAF51122549777004E2986 /* GWScrollCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DAF51022549777004E2986 /* GWScrollCollectionView.m */; };
+		28DAF5142254A088004E2986 /* GWScrollCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DAF5132254A088004E2986 /* GWScrollCollectionCell.m */; };
 		C4583D281E34EF1600D2D7A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D271E34EF1600D2D7A6 /* main.m */; };
 		C4583D2B1E34EF1600D2D7A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D2A1E34EF1600D2D7A6 /* AppDelegate.m */; };
 		C4583D2E1E34EF1600D2D7A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4583D2D1E34EF1600D2D7A6 /* ViewController.m */; };
@@ -58,6 +60,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28DAF50F22549777004E2986 /* GWScrollCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWScrollCollectionView.h; sourceTree = "<group>"; };
+		28DAF51022549777004E2986 /* GWScrollCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWScrollCollectionView.m; sourceTree = "<group>"; };
+		28DAF5122254A088004E2986 /* GWScrollCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWScrollCollectionCell.h; sourceTree = "<group>"; };
+		28DAF5132254A088004E2986 /* GWScrollCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWScrollCollectionCell.m; sourceTree = "<group>"; };
 		C4583D231E34EF1600D2D7A6 /* GWScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4583D271E34EF1600D2D7A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C4583D291E34EF1600D2D7A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -223,6 +229,10 @@
 				C4583D5D1E34EF4300D2D7A6 /* GWScrollView.m */,
 				C48FF4231FECFEA0002087C0 /* GWPageControl.h */,
 				C48FF4241FECFEA0002087C0 /* GWPageControl.m */,
+				28DAF50F22549777004E2986 /* GWScrollCollectionView.h */,
+				28DAF51022549777004E2986 /* GWScrollCollectionView.m */,
+				28DAF5122254A088004E2986 /* GWScrollCollectionCell.h */,
+				28DAF5132254A088004E2986 /* GWScrollCollectionCell.m */,
 			);
 			path = gwScrollViewLib;
 			sourceTree = "<group>";
@@ -406,8 +416,10 @@
 			files = (
 				C4583D2E1E34EF1600D2D7A6 /* ViewController.m in Sources */,
 				C4583D8F1E34F01D00D2D7A6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				28DAF5142254A088004E2986 /* GWScrollCollectionCell.m in Sources */,
 				C4583D901E34F01D00D2D7A6 /* UIImageView+WebCache.m in Sources */,
 				C4583D8E1E34F01D00D2D7A6 /* UIImage+WebP.m in Sources */,
+				28DAF51122549777004E2986 /* GWScrollCollectionView.m in Sources */,
 				C4583D8A1E34F01D00D2D7A6 /* SDWebImagePrefetcher.m in Sources */,
 				C4583D5F1E34EF4300D2D7A6 /* GWScrollView.m in Sources */,
 				C4583D861E34F01D00D2D7A6 /* SDWebImageDecoder.m in Sources */,
