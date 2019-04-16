@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger,dataType) {
     dataType_Image = 2
 };
 
-typedef void (^gwScrollViewSelectBlock)(NSInteger);
+typedef void (^gwScrollViewSelectBlock)(NSInteger select);
 @interface GWScrollView : UIView<UIScrollViewDelegate>
 
 ///////dataSource

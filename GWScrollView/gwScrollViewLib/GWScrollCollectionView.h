@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger,GWScrollCollectionView_dataType) {
 @protocol GWScrollCollectionViewDelegate <NSObject>
 @optional
 
+- (void)GWScrollCollectionView:(GWScrollCollectionView *)view didSelectItemIndex:(NSInteger)itemIndex;
+
 #pragma mark - 自定义cell
 /** 如果你需要自定义cell样式，请在实现此代理方法返回你的自定义cell的class。 */
 - (Class)GWScrollCollectionViewCellClassForScrollCollectionView:(GWScrollCollectionView *)view;
@@ -35,21 +37,29 @@ typedef NS_ENUM(NSInteger,GWScrollCollectionView_dataType) {
 
 @end
 
+typedef void (^GWScrollCollectionViewSelect)(NSInteger select);
 @interface GWScrollCollectionView : UIView
 
+@property (nonatomic, copy) GWScrollCollectionViewSelect GWScrollCollectionViewSelectAction; // 图片点击事件
 #pragma mark - dataSource
 /** 存储图片的地址 */
-@property (strong ,nonatomic) NSMutableArray *slideImagesArray;
+@property (strong ,nonatomic) NSMutableArray *GW_ImagesArray;
+/** title数据 */
+@property (strong ,nonatomic) NSMutableArray *GW_TitleArray;
 
 #pragma mark - CollectionView
 /** 显示图片的collectionView */
 @property (strong ,nonatomic) UICollectionView *collectionView;
 /** collectionView布局 */
 @property (strong ,nonatomic) UICollectionViewFlowLayout *flowLayout;
+//图片类型
+@property (assign, nonatomic) GWScrollCollectionView_dataType data_Type;
 /** 自动滚动间隔时间,默认2s */
 @property (assign, nonatomic) CGFloat autoScrollTimeInterval;
 /** 是否自动滚动,默认Yes */
 @property (assign, nonatomic) BOOL autoScroll;
+/** 是否无限循环,默认Yes */
+@property (assign, nonatomic) BOOL infiniteLoop;
 /** 图片滚动方向，默认为水平滚动 */
 @property (assign, nonatomic) UICollectionViewScrollDirection scrollDirection;
 /** CollectionView高度 默认GWScrollCollectionView高度 */
@@ -103,6 +113,9 @@ typedef NS_ENUM(NSInteger,GWScrollCollectionView_dataType) {
 /** pageControl当前图片(如果需要改变图片，pageImageStr和currentPageImageStr必须同时实现) */
 @property (copy,nonatomic)NSString *currentPageImageStr;
 
+
+
+@property (weak, nonatomic) id<GWScrollCollectionViewDelegate> delegate;
 /** 页面数据初始化（必须实现） */
 - (void)startLoading;
 
